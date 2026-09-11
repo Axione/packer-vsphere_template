@@ -16,26 +16,29 @@ source "vsphere-iso" "this" {
   http_directory = var.http_directory
   http_content = var.http_content_filename == "" ? {} : merge({
     "/${var.http_content_filename}" = templatefile(var.http_content_filename_path, {
-      internet_install = var.internet_install
-      vm_name          = var.vm_name
-      filesystem_type  = var.filesystem_type
-      root_password    = local.root_password
-      ssh_username     = local.ssh_username
-      ssh_password     = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
-      net_ip           = var.net_ip
-      net_gateway      = var.net_gateway
-      net_netmask      = var.net_netmask
-      net_dns          = var.net_dns
-      timezone         = var.timezone
-      locales          = var.locales
-      keyboard_layout  = var.keyboard_layout
-      disk_name        = var.disk_name
-      disk_swap_size   = var.disk_swap_size
-      disk_boot_size   = var.disk_boot_size
-      http_proxy       = var.http_proxy
-      major_version    = var.major_version
-      winrm_username   = local.winrm_username
-      winrm_password   = local.winrm_password
+      internet_install       = var.internet_install
+      vm_name                = var.vm_name
+      filesystem_type        = var.filesystem_type
+      root_password          = local.root_password
+      ssh_username           = local.ssh_username
+      ssh_password           = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
+      net_ip                 = var.net_ip
+      net_gateway            = var.net_gateway
+      net_netmask            = var.net_netmask
+      net_dns                = var.net_dns
+      timezone               = var.timezone
+      locales                = var.locales
+      keyboard_layout        = var.keyboard_layout
+      disk_name              = var.disk_name
+      disk_swap_size         = var.disk_swap_size
+      disk_boot_size         = var.disk_boot_size
+      http_proxy             = var.http_proxy
+      major_version          = var.major_version
+      winrm_username         = local.winrm_username
+      winrm_password         = local.winrm_password
+      windows_language       = var.windows_language
+      windows_input_language = var.windows_input_language
+      windows_edition        = var.windows_edition
     })
   }, var.http_content_extra)
   http_port_min     = var.http_port_min
@@ -48,26 +51,29 @@ source "vsphere-iso" "this" {
   floppy_dirs     = var.floppy_dirs
   floppy_content = var.floppy_content_filename == "" ? {} : merge({
     "/${var.floppy_content_filename}" = templatefile(var.floppy_content_filename_path, {
-      internet_install = var.internet_install
-      vm_name          = var.vm_name
-      filesystem_type  = var.filesystem_type
-      root_password    = local.root_password
-      ssh_username     = local.ssh_username
-      ssh_password     = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
-      net_ip           = var.net_ip
-      net_gateway      = var.net_gateway
-      net_netmask      = var.net_netmask
-      net_dns          = var.net_dns
-      timezone         = var.timezone
-      locales          = var.locales
-      keyboard_layout  = var.keyboard_layout
-      disk_name        = var.disk_name
-      disk_swap_size   = var.disk_swap_size
-      disk_boot_size   = var.disk_boot_size
-      http_proxy       = var.http_proxy
-      major_version    = var.major_version
-      winrm_username   = local.winrm_username
-      winrm_password   = local.winrm_password
+      internet_install       = var.internet_install
+      vm_name                = var.vm_name
+      filesystem_type        = var.filesystem_type
+      root_password          = local.root_password
+      ssh_username           = local.ssh_username
+      ssh_password           = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
+      net_ip                 = var.net_ip
+      net_gateway            = var.net_gateway
+      net_netmask            = var.net_netmask
+      net_dns                = var.net_dns
+      timezone               = var.timezone
+      locales                = var.locales
+      keyboard_layout        = var.keyboard_layout
+      disk_name              = var.disk_name
+      disk_swap_size         = var.disk_swap_size
+      disk_boot_size         = var.disk_boot_size
+      http_proxy             = var.http_proxy
+      major_version          = var.major_version
+      winrm_username         = local.winrm_username
+      winrm_password         = local.winrm_password
+      windows_language       = var.windows_language
+      windows_input_language = var.windows_input_language
+      windows_edition        = var.windows_edition
     })
   }, var.floppy_content_extra)
   floppy_label = var.floppy_label
@@ -79,26 +85,29 @@ source "vsphere-iso" "this" {
   cd_files     = var.cd_files
   cd_content = var.cd_content_filename == "" ? {} : merge({
     "/${var.cd_content_filename}" = templatefile(var.cd_content_filename_path, {
-      internet_install = var.internet_install
-      vm_name          = var.vm_name
-      filesystem_type  = var.filesystem_type
-      root_password    = local.root_password
-      ssh_username     = local.ssh_username
-      ssh_password     = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
-      net_ip           = var.net_ip
-      net_gateway      = var.net_gateway
-      net_netmask      = var.net_netmask
-      net_dns          = var.net_dns
-      timezone         = var.timezone
-      locales          = var.locales
-      keyboard_layout  = var.keyboard_layout
-      disk_name        = var.disk_name
-      disk_swap_size   = var.disk_swap_size
-      disk_boot_size   = var.disk_boot_size
-      http_proxy       = var.http_proxy
-      major_version    = var.major_version
-      winrm_username   = local.winrm_username
-      winrm_password   = local.winrm_password
+      internet_install       = var.internet_install
+      vm_name                = var.vm_name
+      filesystem_type        = var.filesystem_type
+      root_password          = local.root_password
+      ssh_username           = local.ssh_username
+      ssh_password           = var.cd_content_filename == "user-data" ? bcrypt("${local.ssh_password}") : local.ssh_password
+      net_ip                 = var.net_ip
+      net_gateway            = var.net_gateway
+      net_netmask            = var.net_netmask
+      net_dns                = var.net_dns
+      timezone               = var.timezone
+      locales                = var.locales
+      keyboard_layout        = var.keyboard_layout
+      disk_name              = var.disk_name
+      disk_swap_size         = var.disk_swap_size
+      disk_boot_size         = var.disk_boot_size
+      http_proxy             = var.http_proxy
+      major_version          = var.major_version
+      winrm_username         = local.winrm_username
+      winrm_password         = local.winrm_password
+      windows_language       = var.windows_language
+      windows_input_language = var.windows_input_language
+      windows_edition        = var.windows_edition
     })
   }, var.cd_content_extra)
   cd_label = var.cd_label

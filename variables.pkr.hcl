@@ -16,6 +16,11 @@ variable "vault_kv_path" {
   type    = string
   default = ""
 }
+variable "vault_ssh_path" {
+  type    = string
+  default = "ssh"
+}
+
 
 ##########################################################
 ### Boot Configuration
@@ -125,6 +130,22 @@ variable "filesystem_type" {
   type        = string
   default     = "ext4"
 }
+variable "windows_language" {
+  description = "system language"
+  type        = string
+  default     = "fr-FR"
+}
+variable "windows_input_language" {
+  description = "keyboard language"
+  type        = string
+  default     = "fr-FR"
+}
+variable "windows_edition" {
+  description = "windows edition name on boot"
+  type        = string
+  default     = "Windows Server 2025 SERVERSTANDARD"
+}
+
 
 ########################
 variable "http_port_min" {
